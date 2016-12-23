@@ -7,13 +7,13 @@ var bodyParser = require('body-parser');
 var app = express();
 var api = require('../server/routes/api.js')
 
-app.get("*", function(req,res){
-  res.sendFile(path.join(__dirname, '../client', 'index.html'));
-});
-
-app.use('/css',express.static(path.join(__dirname, '../client/css')));
-app.use('/js',express.static(path.join(__dirname, '../client/js')));
-app.use('/partials',express.static(path.join(__dirname, '../client/partials')));
+// app.get("*", function(req,res){
+//   res.sendFile(path.join(__dirname, '../client', 'index.html'));
+// });
+//
+// app.use('/css',express.static(path.join(__dirname, '../client/css')));
+// app.use('/js',express.static(path.join(__dirname, '../client/js')));
+// app.use('/partials',express.static(path.join(__dirname, '../client/partials')));
 
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +25,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', api);
 
