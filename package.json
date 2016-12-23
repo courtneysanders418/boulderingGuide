@@ -6,7 +6,7 @@
         "start": "node ./bin/www",
         "rewrites": [{
             "source": "**/**",
-            "destination": "/index.html"
+            "destination": "client/index.html"
         }]
     },
     "dependencies": {

@@ -13,7 +13,7 @@ app.get("*", function(req,res){
 
 app.use('/css',express.static(path.join(__dirname, '../client/css')));
 app.use('/js',express.static(path.join(__dirname, '../client/js')));
-app.use('/templates',express.static(path.join(__dirname, '../client/js/templates')));
+app.use('/partials',express.static(path.join(__dirname, '../client/partials')));
 
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
