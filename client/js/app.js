@@ -1,3 +1,1 @@
-var app = angular.module('myapp', ['ui.router'])
-
-console.log('hello');
+var app = angular.module('myapp', ['ui.router', 'ngCookies'])
