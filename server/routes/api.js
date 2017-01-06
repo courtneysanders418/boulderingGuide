@@ -25,33 +25,57 @@ router.post('/login',
         res.redirect('/users/' + req.user.username);
     });
 
+
 module.exports = router;
 
-'use strict';
 
-module.exports = function(app) {
-    // Root routing
-    var core = require('client/js/controllers/contact.js');
+module.exports = function(app, passport) {
 
-    app.route('/contact').post(core.sendMail);
-};
-
-var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport();
-
-/**
- * Send an email when the contact from is submitted
- */
-exports.sendMail = function(req, res) {
-
-    var data = req.body;
-
-    transporter.sendMail({
-        from: data.contactEmail,
-        to: 'cswoods88@gmail.com.com',
-        subject: 'Message from ' + data.contactName,
-        text: data.contactMsg
+    // route for home page
+    app.get('/', function(req, res) {
+        res.render('index.html'); // load the index.ejs file
     });
 
-    res.json(data);
+    // route for login form
+    // route for processing the login form
+    // route for signup form
+    // route for processing the signup form
+
+    // route for showing the profile page
+    app.get('/profile', isLoggedIn, function(req, res) {
+        res.render('profile.html', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
+
+    // =====================================
+    // FACEBOOK ROUTES =====================
+    // =====================================
+    // route for facebook authentication and login
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+    // handle the callback after facebook has authenticated the user
+    app.get('/auth/facebook/callback',
+        passport.authenticate('facebook', {
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        }));
+
+    // route for logging out
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
 };
+
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}

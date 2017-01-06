@@ -3,16 +3,8 @@ app.controller('MainController', function($scope) {
 
     $(document).ready(function() {
         $('.parallax').parallax();
+        $(".button-collapse").sideNav();
+      $('.carousel.carousel-slider').carousel({full_width: true});
     });
 
-    $(window).scroll(function() {
-        if ($(document).scrollTop() > 50) {
-            $('nav').addClass('shrink');
-        } else {
-            $('nav').removeClass('shrink');
-        }
-    });
-
-    $(".button-collapse").sideNav();
-
-})
+});

@@ -30,3 +30,25 @@ app.controller('auth', function($scope, $cookieStore, authService, $location) {
         });
     }
   })
+
+  module.exports = {
+
+    'facebookAuth' : {
+        'clientID'      : '309717429429579', // your App ID
+        'clientSecret'  : '24f6d03656f461d79622b0149f321713', // your App Secret
+        'callbackURL'   : 'http://localhost:8080/auth/facebook/callback'
+    },
+
+    'twitterAuth' : {
+        'consumerKey'       : 'your-consumer-key-here',
+        'consumerSecret'    : '24f6d03656f461d79622b0149f321713',
+        'callbackURL'       : 'http://localhost:8080/auth/twitter/callback'
+    },
+
+    'googleAuth' : {
+        'clientID'      : '309717429429579',
+        'clientSecret'  : '24f6d03656f461d79622b0149f321713',
+        'callbackURL'   : 'http://localhost:8080/auth/google/callback'
+    }
+
+};

@@ -9,32 +9,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Sigmar+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Raleway|Sigmar+One" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
     <base href="/">
 </head>
 
 <body ng-controller="MainController">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/landingpage" class="brand-logo black-text text-lighten-2">Daniel Woods</a>
+                <a href="/landingpage" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/about" class="black-text text-lighten-2">ABOUT</a></li>
+                    <li><a href="/app" class="black-text text-lighten-2">APP</a></li>
+                    <li><a href="/ebook" class="black-text text-lighten-2">EBOOK</a></li>
+                    <li><a href="/contact" class="black-text text-lighten-2">CONTACT</a></li>
+                    <li><a class="btn waves-effect waves-light black-text transparent lighten-1" id="login" href="/login">LOG IN</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="/about" class="black-text text-lighten-2">ABOUT</a></li>
+                    <li><a href="/app" class="black-text text-lighten-2">APP</a></li>
+                    <li><a href="/ebook" class="black-text text-lighten-2">EBOOK</a></li>
+                    <li><a href="/contact" class="black-text text-lighten-2">CONTACT</a></li>
+                    <li><a href="/login" class="black-text text-lighten-2">LOG IN</a></li>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/landingpage" class="brand-logo black-text text-lighten-2">Daniel Woods</a>
-            <a href="/landingpage" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/about" class="black-text text-lighten-2">ABOUT</a></li>
-                <li><a href="/app" class="black-text text-lighten-2">APP</a></li>
-                <li><a href="/ebook" class="black-text text-lighten-2">EBOOK</a></li>
-                <li><a href="/contact" class="black-text text-lighten-2">CONTACT</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="/about" class="black-text text-lighten-2">ABOUT</a></li>
-                <li><a href="/app" class="black-text text-lighten-2">APP</a></li>
-                <li><a href="/ebook" class="black-text text-lighten-2">EBOOK</a></li>
-                <li><a href="/contact" class="black-text text-lighten-2">CONTACT</a></li>
-                <li><a class="btn-large waves-effect waves-light transparent lighten-1" id="login" href="/login">LOG IN</a></li>
-            </ul>
-        </div>
-    </nav>
+                </ul>
+            </div>
+        </nav>
 
     <!-- angular check -->
     <!-- <h2>{{working}}!</h2> -->
